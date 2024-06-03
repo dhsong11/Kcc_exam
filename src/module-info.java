@@ -1,0 +1,2 @@
+module Kcc_Java {
+}
