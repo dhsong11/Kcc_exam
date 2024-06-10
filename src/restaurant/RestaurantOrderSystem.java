@@ -34,7 +34,7 @@
 //				System.out.print("삭제할 메뉴 이름: ");
 //				String deleteName = scanner.next();
 //				for (MenuItem menuItem : order.getItems()) {
-//					if (menuItem.getName().equals(deleteName)) {
+//					if (menuItem.getPrice().equals(deleteName)) {
 //						order.removeItem(menuItem);
 //						System.out.println(deleteName + "이(가) 주문에서 삭제되었습니다.");
 //						break;

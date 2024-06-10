@@ -24,16 +24,14 @@ public class PhoneMain {
             break;
    
          case 3:
-            System.out.print(">검색 이름:");
-            String searchName = sc.nextLine();
-            PhoneInfo p = manager.search(searchName);
-            if(p == null)
-               System.out.println("없습니다");
-            else
-               p.printPhoneInfo();
+            manager.update();
             break;
             
          case 4:
+            manager.delete();
+            break;
+        	 
+         case 5:
             System.out.println("프로그램 종료");
             return;
          }
@@ -41,7 +39,7 @@ public class PhoneMain {
    }
 
    private static void showMenu() {
-      System.out.println(">1.추가 2.전체출력 3.검색 4.종료");
+      System.out.println(">1.추가 2.전체출력 3.검색 4.삭제 5.종료");
       System.out.print(">메뉴: ");
    }
    

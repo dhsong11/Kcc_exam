@@ -15,6 +15,22 @@ public class UniverseInfo extends PhoneInfo{
 	
 
 
+	public String getMajor() {
+		return major;
+	}
+
+	public void setMajor(String major) {
+		this.major = major;
+	}
+
+	public String getYear() {
+		return year;
+	}
+
+	public void setYear(String year) {
+		this.year = year;
+	}
+
 	public void printUniverseInfo() {
 		System.out.println("학과 : " + major);
 		System.out.println("학년 : " + year);

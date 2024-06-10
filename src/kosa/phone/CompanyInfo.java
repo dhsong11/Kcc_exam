@@ -16,6 +16,22 @@ public class CompanyInfo extends PhoneInfo {
 	};
 
 	
+	public String getDept() {
+		return dept;
+	}
+
+	public void setDept(String dept) {
+		this.dept = dept;
+	}
+
+	public String getPosition() {
+		return position;
+	}
+
+	public void setPosition(String position) {
+		this.position = position;
+	}
+
 	public void printCompanyInfo() {
 		System.out.println("회사이름 : " + dept);
 		System.out.println("직책 : " + position);
