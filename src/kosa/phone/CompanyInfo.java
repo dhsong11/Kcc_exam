@@ -1,6 +1,8 @@
 package kosa.phone;
 
-public class CompanyInfo extends PhoneInfo {
+import java.io.Serializable;
+
+public class CompanyInfo extends PhoneInfo implements Serializable{
 
 	String dept;
 	String position;
@@ -33,8 +35,8 @@ public class CompanyInfo extends PhoneInfo {
 	}
 
 	public void printCompanyInfo() {
-		System.out.println("»∏ªÁ¿Ã∏ß : " + dept);
-		System.out.println("¡˜√• : " + position);
+		System.out.println("Î∂ÄÏÑú : " + dept);
+		System.out.println("ÏßÅÏ±Ö : " + position);
 
 	}
 

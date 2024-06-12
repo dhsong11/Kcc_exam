@@ -1,29 +1,32 @@
 package kosa.phone;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
-import kosa.data.Person;
-
 public class Manager {
 	static Scanner sc = new Scanner(System.in);
 	static List<PhoneInfo> phoneInfos = new ArrayList<>();
-//main¸Ş¼­µå¿À
+//mainë©”ì„œë“œì˜¤
 	public static void addPhoneInfo() {
 
-		System.out.println("1.ÀÏ¹İ 2.È¸»ç 3.µ¿Ã¢");
+		System.out.println("1.ì¼ë°˜ 2.íšŒì‚¬ 3.ë™ì°½");
 		String menu = sc.nextLine();
 
 		switch (menu) {
 		case "1":
 
-			System.out.print(">ÀÌ¸§: ");
+			System.out.print(">ì´ë¦„: ");
 			String name = sc.nextLine();
-			System.out.print(">ÀüÈ­¹øÈ£: ");
+			System.out.print(">ì „í™”ë²ˆí˜¸: ");
 			String phoneNo = sc.nextLine();
-			System.out.print(">»ı³â¿ùÀÏ: ");
+			System.out.print(">ìƒë…„ì›”ì¼: ");
 			String birth = sc.nextLine();
 
 			PhoneInfo p = new PhoneInfo(name, phoneNo, birth);
@@ -32,15 +35,15 @@ public class Manager {
 			break;
 
 		case "2":
-			System.out.print(">ÀÌ¸§: ");
+			System.out.print(">ì´ë¦„: ");
 			String nameCompany = sc.nextLine();
-			System.out.print(">ÀüÈ­¹øÈ£: ");
+			System.out.print(">ì „í™”ë²ˆí˜¸: ");
 			String phoneNoCompany = sc.nextLine();
-			System.out.print(">»ı³â¿ùÀÏ: ");
+			System.out.print(">ìƒë…„ì›”ì¼: ");
 			String birthCompany = sc.nextLine();
-			System.out.print(">ºÎ¼­: ");
+			System.out.print(">ë¶€ì„œ: ");
 			String dept = sc.nextLine();
-			System.out.print(">Á÷Ã¥: ");
+			System.out.print(">ì§ì±…: ");
 			String position = sc.nextLine();
 
 			CompanyInfo c = new CompanyInfo(nameCompany, phoneNoCompany, birthCompany, dept, position);
@@ -49,15 +52,15 @@ public class Manager {
 			break;
 
 		case "3":
-			System.out.print(">ÀÌ¸§ : ");
+			System.out.print(">ì´ë¦„ : ");
 			String nameUniverse = sc.nextLine();
-			System.out.print(">ÀüÈ­¹øÈ£ : ");
+			System.out.print(">ì „í™”ë²ˆí˜¸ : ");
 			String phoneNoUniverse = sc.nextLine();
-			System.out.print(">»ı³â¿ùÀÏ : ");
+			System.out.print(">ìƒë…„ì›”ì¼ : ");
 			String birthUniverse = sc.nextLine();
-			System.out.print(">ÇĞ°ú : ");
+			System.out.print(">í•™ê³¼ : ");
 			String major = sc.nextLine();
-			System.out.print(">ÇĞ³â : ");
+			System.out.print(">í•™ë…„ : ");
 			String year = sc.nextLine();
 
 			UniverseInfo u = new UniverseInfo(nameUniverse, phoneNoUniverse, birthUniverse, major, year);
@@ -77,19 +80,19 @@ public class Manager {
 		Iterator<PhoneInfo> iter = phoneInfos.iterator();
 		while (iter.hasNext()) {
 			PhoneInfo p = iter.next();
-			System.out.println(p.getName() + "ÀÔ´Ï´Ù.");
-			System.out.println(p.getPhoneNo() + "ÀÔ´Ï´Ù.");
-			System.out.println(p.getBirth() + "ÀÔ´Ï´Ù.");
+			System.out.println(p.getName() + "ì…ë‹ˆë‹¤.");
+			System.out.println(p.getPhoneNo() + "ì…ë‹ˆë‹¤.");
+			System.out.println(p.getBirth() + "ì…ë‹ˆë‹¤.");
 		}
 	}
 
 	public static void update() {
-		System.out.print("ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä: ");
+		System.out.print("ì´ë¦„ì„ ì…ë ¥í•´ì£¼ì„¸ìš”: ");
 		String name = sc.nextLine();
 
 		for (PhoneInfo info : phoneInfos) {
 			if (info.getName().equals(name)) {
-				System.out.println("ÀüÈ­¹øÈ£¸¦ º¯°æÇØÁÖ¼¼¿ä: ");
+				System.out.println("ì „í™”ë²ˆí˜¸ë¥¼ ë³€ê²½í•´ì£¼ì„¸ìš”: ");
 				String phone_num = sc.nextLine();
 				info.setPhoneNo(phone_num);
 			} else {
@@ -100,7 +103,7 @@ public class Manager {
 	}
 
 	public static void delete() {
-		System.out.println("»èÁ¦ÇÒ ÀüÈ­¹øÈ£ÀÇ ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä: ");
+		System.out.println("ì‚­ì œí•  ì „í™”ë²ˆí˜¸ì˜ ì´ë¦„ì„ ì…ë ¥í•´ì£¼ì„¸ìš”: ");
 		String name = sc.nextLine();
 
 		for (int i = 0; i < phoneInfos.size(); i++) {
@@ -121,7 +124,63 @@ public class Manager {
 	}
 	
 	public static void sort() {
-		System.out.println("Á¤·ÄÇÒ ±âÁØÀ» ¼±ÅÃ: ");
+		System.out.println("ì •ë ¬í•  ê¸°ì¤€ì„ ì„ íƒ: ");
 		
 	}
+	 
+	//ì €ì¥
+	public static void saveToFile() {
+        ObjectOutputStream oos = null;
+        
+        try { 
+        	oos = new ObjectOutputStream(new FileOutputStream("phone.txt"));
+            oos.writeObject(phoneInfos);
+            System.out.println("ì €ì¥ë˜ì—ˆìŠµë‹ˆë‹¤.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+        	try {
+        		oos.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+
+		}
+    }
+
+	//ë¶ˆëŸ¬ì˜¤ê¸°
+    public static void loadFromFile() {
+    	ObjectInputStream ois = null;
+        try {
+        	ois = new ObjectInputStream(new FileInputStream("phone.txt"));
+            phoneInfos = (List<PhoneInfo>) ois.readObject();
+            System.out.println(phoneInfos.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+			try {
+				ois.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+		}
+    }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

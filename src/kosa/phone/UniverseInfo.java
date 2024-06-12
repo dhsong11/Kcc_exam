@@ -1,6 +1,8 @@
 package kosa.phone;
 
-public class UniverseInfo extends PhoneInfo{
+import java.io.Serializable;
+
+public class UniverseInfo extends PhoneInfo implements Serializable{
 	String major;
 	String year;
 
@@ -32,8 +34,8 @@ public class UniverseInfo extends PhoneInfo{
 	}
 
 	public void printUniverseInfo() {
-		System.out.println("ÇĞ°ú : " + major);
-		System.out.println("ÇĞ³â : " + year);
+		System.out.println("í•™ê³¼: " + major);
+		System.out.println("ë…„ë„: " + year);
 
 	}
 

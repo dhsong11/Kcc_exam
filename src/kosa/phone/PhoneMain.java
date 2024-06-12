@@ -10,7 +10,7 @@ public class PhoneMain {
       Scanner sc = new Scanner(System.in);
       Manager manager = new Manager();
       
-      while(true) { //4¹øÀ» ´©¸£±â Àü±îÁö ¹«ÇÑ¹Ýº¹
+      while(true) { //4ë²ˆì„ ëˆ„ë¥´ê¸° ì „ê¹Œì§€ ë¬´í•œë°˜ë³µ
          showMenu();
          int menu = Integer.parseInt(sc.nextLine());
          
@@ -32,17 +32,24 @@ public class PhoneMain {
             break;
         	 
          case 5:
-            System.out.println("ÇÁ·Î±×·¥ Á¾·á");
+            System.out.println("í”„ë¡œê·¸ëž¨ ì¢…ë£Œ");
             return;
+         case 7:
+             manager.saveToFile();
+             break;
+         case 8:
+             manager.loadFromFile();
+             break;
+         default:
+             System.out.println("ìž˜ëª»ëœ ìž…ë ¥ìž…ë‹ˆë‹¤.");
+             break;
          }
       }      
    }
 
    private static void showMenu() {
-      System.out.println(">1.Ãß°¡ 2.ÀüÃ¼Ãâ·Â 3.°Ë»ö 4.»èÁ¦ 5.Á¾·á");
-      System.out.print(">¸Þ´º: ");
+      System.out.println(">1.ì¶”ê°€ 2.ì „ì²´ì¶œë ¥ 3.ê²€ìƒ‰ 4.ì‚­ì œ 5.ì¢…ë£Œ 7.ì €ìž¥ 8.ë¶ˆëŸ¬ì˜¤ê¸°");
+      System.out.print(">ë©”ë‰´: ");
    }
    
 }
-
-
