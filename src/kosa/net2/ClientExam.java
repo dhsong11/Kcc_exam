@@ -1,4 +1,4 @@
-package kosa.net3;
+package kosa.net2;
 
 import java.net.Socket;
 

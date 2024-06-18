@@ -1,17 +1,17 @@
-package kosa.net3;
+package kosa.net2;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.Socket;
 
-public class ServerReceive extends Thread {
+public class ClientReceive extends Thread{
 	
-	private Socket socket;
+private Socket socket;
 	
 
-	public ServerReceive() {}
+	public ClientReceive() {}
 	
-	public ServerReceive(Socket socket) {
+	public ClientReceive(Socket socket) {
 		super();
 		this.socket = socket;
 	}
@@ -28,11 +28,12 @@ public class ServerReceive extends Thread {
 		while(true) {
 			String str = br.readLine();
 			if(str == null) break;
-			System.out.println("서버 수신: " + str);
+			System.out.println("클라이언트 수신: " + str);
 		}
 		
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
+
 }

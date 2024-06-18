@@ -1,19 +1,19 @@
-package kosa.net3;
+package kosa.net2;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-public class ClientSender extends Thread {
+public class ServerSender extends Thread{
 
-private Socket socket;
+	private Socket socket;
 	
-	public ClientSender() {}
+	public ServerSender() {}
 	
 	
 	
-	public ClientSender(Socket socket) {
+	public ServerSender(Socket socket) {
 		super();
 		this.socket = socket;
 	}
